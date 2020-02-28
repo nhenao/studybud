@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>To Do</title>
+        <link href="toDo.css" rel="stylesheet" type="text/css">
+    </head>
+<body>
+    
+ <!-- Top Nav Bar -->
+    <div class= "topnav"> 
+        <a href="index.html">Login </a>
+        <a href="MyFirstSchedule.html">Schedule</a>
+        <a class = "active" href="toDo.html">To Do List</a>
+            <div class="subnav">
+                <button class="subnavbtn">Assignments <i class="fa fa-caret-down"></i></button>
+                <div class="subnav-content">
+                    <a href="homework.html">Homework</a>
+                    <a href="#Projects">Projects</a>
+                    <a href="#notes">Notes</a>
+                    <a href="#exams">Exams</a>
+                </div>
+            
+            </div> 
+    
+        
+    </div>
+    
+    <!-- Dashboard -->
+    
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    </div>
+
+    <div id="main">
+        <button class="openbtn" onclick="openNav()">Dashboard </button> 
+     
+    </div>
+    
+    
+    
+<!-- script for Side NavBar. -->
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+    
+    
+<div id="myDIV" class="header">
+  <h2 style="margin:5px">To Do List</h2>
+  <input type="text" id="myInput" placeholder="Task...">
+  <span onclick="newElement()" class="addBtn">Add</span>
+</div>
+
+<ul id="myUL">
+ 
+</ul>
+
+<script>
+// Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+</script>
+
+    
+    </body>
+</html>
