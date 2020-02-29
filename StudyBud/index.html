@@ -2,18 +2,18 @@
 <html>
     <head>
         <title>Study Bud</title>
-        <link href="style.css" rel="stylesheet" type="text/css">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
 <body>
     <!-- Top Nav Bar -->
     <div class= "topnav"> 
         <a class = "active" href="index.html">Login </a>
-        <a href="MyFirstSchedule.html">Schedule</a>
-        <a href="toDo.html">To Do List</a>
+        <a href="schedule.html">Schedule</a>
             <div class="subnav">
                 <button class="subnavbtn">Assignments <i class="fa fa-caret-down"></i></button>
                 <div class="subnav-content">
-                    <a href="#homework">Homework</a>
+                    <a href="homework.html">Homework</a>
                     <a href="#Projects">Projects</a>
                     <a href="#notes">Notes</a>
                     <a href="#exams">Exams</a>
@@ -24,25 +24,96 @@
         
     </div>
     
-    <!-- Dashboard -->
+        <!-- Dashboard -->
     
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        
+       <div id="myDIV" class="header">
+  <h2 style="margin:5px">To Do List</h2>
+  <input type="text" id="myInput" placeholder="Task...">
+  <span onclick="newElement()" class="addBtn">Add</span>
+</div>
+
+<ul id="myUL">
+ 
+</ul>
+<!-- script for to do list -->
+<script>
+// Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+</script>
+
     </div>
 
     <div id="main">
-        <button class="openbtn" onclick="openNav()">Dashboard </button> 
-     
-    </div>
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
+        <button class="openbtn" onclick="openNav()">Dashboard </button> 
+    </div>
+    
+<!-- script for Side NavBar. -->
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "50%";
+  document.getElementById("main").style.marginLeft = "50%";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
 }
 </script>
     
@@ -61,7 +132,7 @@ window.onclick = function(event) {
     <form class="modal-content animate" action="/action_page.php" method="post">
         <div class="imgcontainer">
             <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-            <img src="image-avatar.png" alt="Avatar" class="avatar">
+            <img src="images/image-avatar.png" alt="Avatar" class="avatar">
         </div>
 
         <div class="container">
@@ -85,27 +156,26 @@ window.onclick = function(event) {
             
             </div>
     </div>
-    
-            
+             
 </div>
-<!-- SideBar Javascript -->
-<script>
-function openNav() {
-  document.getElementById("mySidebar").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-}
+    <br>
+    <div>
+        <img src="images/logo.jpg" class="homeImage" alt="Open Book with Pages Turning">
+    </div>
 
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
+<!-- Login Script -->       
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }
 </script>
-
-       
-   
-
-        
-    
+       <!-- script for todo list --> 
     
     </body>
 </html>
