@@ -8,14 +8,13 @@
 <body>
     <!-- Top Nav Bar -->
     <div class= "topnav"> 
-        <a class = "active" href="index.html">Login </a>
+        <a class = "active" href="index.html">Home </a>
         <a href="schedule.html">Schedule</a>
             <div class="subnav">
                 <button class="subnavbtn">Assignments <i class="fa fa-caret-down"></i></button>
                 <div class="subnav-content">
                     <a href="homework.html">Homework</a>
                     <a href="#Projects">Projects</a>
-                    <a href="#notes">Notes</a>
                     <a href="#exams">Exams</a>
                 </div>
             
@@ -32,9 +31,9 @@
        <div id="myDIV" class="header">
   <h2 style="margin:5px">To Do List</h2>
   <input type="text" id="myInput" placeholder="Task...">
-  <span onclick="newElement()" class="addBtn">Add</span>
+  <span onclick="newElement()" class="addBtn">Add Task</span>
 </div>
-
+<br>
 <ul id="myUL">
  
 </ul>
@@ -120,7 +119,7 @@ function closeNav() {
 <!-- Login Page Content -->
     <div class="headings">
         <h1>Organize your Semester!</h1>
-        <h2>Plan out your homework assignments, keep your school documents organized,<br>and be alerted for up coming projects and exams</h2>
+        <h2>Plan out your assignments and task, and stay on schedule</h2>
             <br>
          <div class="button">
             <button onclick="document.getElementById('id01').style.display='block'" class="btn btn-login">Login</button>

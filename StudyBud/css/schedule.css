@@ -1,3 +1,9 @@
+*
+{
+    margin: 0;
+    padding:0;
+        
+}
 /* Top Nav Bar */
 .topnav {
   overflow: hidden;
@@ -28,6 +34,50 @@ nav
     height: 100px;
 }
 
+/* Sub Nav */
+subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 20px 16px;
+  background-color: inherit;
+  font-family: fantasy;
+  margin: 0;
+}
+
+.navbar a:hover, .subnav:hover .subnavbtn {
+  opacity: 0.5;
+}
+
+.subnav-content{
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: #333;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  opacity: 0.5;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+/* Sub Nav */
 /* Dashboard */
 .sidebar {
   height: 100%;
@@ -36,10 +86,10 @@ nav
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-image: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.8));
   overflow-x: hidden;
   transition: 0.5s;
-  padding-top: 60px;
+  padding-top: 30px;
 }
 
 .sidebar a {
@@ -89,54 +139,114 @@ nav
   .sidebar a {font-size: 18px;}
 }
 /* Dashboard */
-/* Sub Nav */
-subnav {
-  float: left;
-  overflow: hidden;
+/* To DO list*/
+* {
+    box-sizing: border-box;
 }
 
-.subnav .subnavbtn {
-  font-size: 16px;  
-  border: none;
-  outline: none;
-  color: white;
-  padding: 20px 16px;
-  background-color: inherit;
-  font-family: fantasy;
-  margin: 0;
+
+#myInput {
+    width: 70%;
+    padding: 10px;
+    font-size: 15px;
+    font-family: fantasy;
+    margin:0;
+    border: none;
+    border-radius: 0;
+    
 }
 
-.navbar a:hover, .subnav:hover .subnavbtn {
-  opacity: 0.5;
+.addBtn {
+    background-color: #4caf82;
+    color: back;
+    font-family: fantasy;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+
 }
 
-.subnav-content{
-  display: none;
-  position: absolute;
-  left: 0;
-  background-color: #333;
-  width: 100%;
-  z-index: 1;
+.addBtn:hover {
+    opacity: 0.8;
 }
 
-.subnav-content a {
-  float: left;
-  color: white;
-  text-decoration: none;
+ul {
+    margin: 0;
+    padding: 0;
 }
 
-.subnav-content a:hover {
-  opacity: 0.5;
+ul li {
+    position: relative;
+    background-color: #7aaf4c;
+    list-style-type: none;
+    cursor: pointer;padding: 10px 6px 10px 30px;
+    transition: 0.3s;
+    user-select: none;
 }
 
-.subnav:hover .subnav-content {
-  display: block;
+ul li:nth-child(odd){
+    opacity: 0.7;
 }
-/* Sub Nav */
+
+ul li:hover {
+    opacity: 0.3;
+    
+}
+
+ul li.checked{
+    background: #282828;
+    color: white;
+    text-decoration: line-through;
+
+}
+
+ul li.checked::before {
+    content: '';
+    position:absolute;
+    border-color: white;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 15px;
+    transform:rotate(45deg);
+    height:15px;
+    width: 10px;
+}
+
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;    
+}
+
+.close:hover {
+    opacity: 1.5;
+}
+
 body
 {
     background-image: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.6));
     height: 100vh;
     background-size: cover;
     background-position: center;       
+}
+
+
+h1
+{
+    color: #7aaf4c;
+    text-transform: uppercase;
+    font: serif;
+    font-size: 60px;
+    text-align: center;
+    
+}
+
+h2
+{
+    text-align: center;
+    color: #7aaf4c;
+   
+    
+    
 }

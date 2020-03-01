@@ -86,10 +86,10 @@ subnav {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-image: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.8));
   overflow-x: hidden;
   transition: 0.5s;
-  padding-top: 60px;
+  padding-top: 30px;
 }
 
 .sidebar a {
@@ -144,43 +144,30 @@ subnav {
     box-sizing: border-box;
 }
 
-.the-header {
-    background-color: #f43c2f;
-    padding:30px 42px;
-    color: white;
-    text-align: center;
-}
-.the-header:after{
-    content: "";
-    display: table;
-    clear: both;
-}
 
-#the-input {
+#myInput {
     width: 70%;
     padding: 10px;
-    float: left;
     font-size: 15px;
+    font-family: fantasy;
     margin:0;
     border: none;
     border-radius: 0;
     
 }
 
-.create-button {
+.addBtn {
+    background-color: #4caf82;
+    color: back;
+    font-family: fantasy;
     padding: 10px;
-    width: 30%;
-    color: red;
-    float: left;
     text-align: center;
     cursor: pointer;
-    border-radius: 0;
-    font-size: 15px;
-    background-color: blue;
+
 }
 
-.create-button:hover {
-    color: black;
+.addBtn:hover {
+    opacity: 0.8;
 }
 
 ul {
@@ -190,20 +177,19 @@ ul {
 
 ul li {
     position: relative;
-    background-color: aqua;
+    background-color: #7aaf4c;
     list-style-type: none;
     cursor: pointer;padding: 10px 6px 10px 30px;
     transition: 0.3s;
-    
     user-select: none;
 }
 
 ul li:nth-child(odd){
-    background-color: f6f9f3;
+    opacity: 0.7;
 }
 
 ul li:hover {
-    background-color: #ddd;
+    opacity: 0.3;
     
 }
 
@@ -211,6 +197,7 @@ ul li.checked{
     background: #282828;
     color: white;
     text-decoration: line-through;
+
 }
 
 ul li.checked::before {
@@ -229,12 +216,11 @@ ul li.checked::before {
 .close {
     position: absolute;
     right: 0;
-    top: 0;
-    padding: 10px 15px 10px 15px;
+    top: 0;    
 }
 
 .close:hover {
-    background: #f43c2f;
+    opacity: 1.5;
 }
 
 body
