@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>My First Schedule</title>
+	<link href="css/schedule.css" rel="stylesheet" />
+	 <script src="https://kit.fontawesome.com/a076d05399.js"></script>	
+</head>
+<body>
+    <!-- Top Nav Bar -->
+     <div class= "topnav"> 
+        <a href="index.html">Home </a>
+        <a class = "active"  href="schedule.html">Schedule</a>
+        <a href="assignments.html">Assignments</a>
+    </div>
+    
+    <!-- Dashboard -->
+    
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        
+       <div id="myDIV" class="header">
+  <h2 style="margin:5px">To Do List</h2>
+  <input type="text" id="myInput" placeholder="Task...">
+  <span onclick="newElement()" class="addBtn">Add Task</span>
+</div>
+<br>
+<ul id="myUL">
+ 
+</ul>
+<!-- script for to do list -->
+<script>
+// Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+</script>
+
+    </div>
+
+    <div id="main">
+
+        <button class="openbtn" onclick="openNav()">Dashboard </button> 
+    </div>
+
+<!-- SideBar Javascript -->
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "50%";
+  document.getElementById("main").style.marginLeft = "50%";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+    <h2>Weekly Schedule</h2><br>
+   
+ <table cellspacing="" width="75%" border="3">
+<tbody>    
+        <tr>
+        <td>Monday</td>
+            <td>
+            <textarea id="textArea" rows= 2 cols= 100 type="text" name="monday"></textarea>
+                <input type="submit" value="Save">
+            </td>
+
+        </tr>
+            <tr>
+            <td>Tuesday</td>
+                <td>
+                <textarea id="textArea" rows= 2 cols= 100 type="text" name="tuesday"></textarea>
+                <input type="submit" value="Save">
+                </td>
+                
+
+        </tr>
+        <tr>
+        <td>Wednesday</td>
+            <td>
+            <textarea id="textArea" rows= 2 cols= 100 type="text" name="wednesday"></textarea>
+                <input type="submit" value="Save">
+            </td>
+
+        </tr>
+        <tr>
+        <td>Thursday</td>
+            <td>
+            <textarea id="textArea" rows= 2 cols= 100 type="text" name="thursday"></textarea>
+            <input type="submit" value="Save">
+            </td>
+        </tr>
+
+        <tr>
+        <td>Friday</td>
+            <td>
+            <textarea id="textArea" rows= 2 cols= 100 type="text" name="friday"></textarea>
+            <input type="submit" value="Save">
+            </td>
+        </tr>
+        <tr>
+        <td>Saturday</td>
+            <td>
+            <textarea id="textArea" rows= 2 cols= 100 type="text" name="saturday"></textarea>
+            <input type="submit" value="Save">
+            </td>
+        </tr>
+        <tr>
+        <td>Sunday</td>
+            <td>
+            <textarea id="textArea" rows= 2 cols= 100 type="text" name="sunday"></textarea>
+                <input type="submit" value="Save">
+            </td>
+        </tr>
+</tbody>
+    </table>
+
+    
+
+</body>
+
+</html>

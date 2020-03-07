@@ -1,0 +1,28 @@
+Goal of website: 
+    To help organize a student during their semester and keep them on task on there assignments. 
+    Alert the student of up coming exam, assignment, and project due dates. 
+    Give the student easy accessability to their professors if they have any questions.
+    Link together google calender with calender in website.
+    
+Home page:
+    There will be one button that when you click it a pop up box appears with a c++ program asking for the user for the name of each course, the professors names and the professors emails
+    
+    Once the user presses continue after answering those questions, it will create a page with a menu bar of all of the users courses.
+    
+    
+The menus of each course will contain these subsections:
+Homework:
+    In the homework subsection, there will be a list of all your courses. Inside each course there will be a section for a to do list to write down assignments that need to complete for each course. (link it the users blackboard)
+    
+Assignments:
+    This will be a place to hold the users files and assignements in an organized fashion. The users google drive will be linked. 
+
+Exams:
+    Under this page it will have an alert system for up coming exams just like a planner. For each exam will be the concept sheets for the courses. 
+    
+Contact page:
+    A link to all my professors emails and list of office hours.
+    
+
+
+
