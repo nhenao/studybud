@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="section">
+            <div class="container box box-color box-background-color box-shadow">
+                <div class="columns is-mobile is-desktop is-vcentered is-centered">
+                    <div class="column is-half is-offset-1">
+                        <form method="POST" action="">
+                            {{ form.hidden_tag() }}
+                            <fieldset class="form">
+                                <legend class="title">Login</legend>
+                                <!-- Input Field For Email -->
+                                <div class="field">
+                                        {{ form.email.label (class="label") }}
+                                        {% if form.email.errors %}
+                                            {{ form.email(class="control is-invalid")}}
+                                            <div class="invalid-feedback">
+                                                {% for error in form.email.errors %}
+                                                    <span>{{ error }}</span>
+                                                {% endfor %}
+                                            </div>
+                                        {% else %}
+                                            {{ form.email (class="control input") }}
+                                        {% endif %}
+                                </div>
+                                <!-- Input Field For Password -->
+                                <div class="field">
+                                        {{ form.password.label (class="label") }}
+                                        {% if form.password.errors %}
+                                            {{ form.password(class="control is-invalid")}}
+                                            <div class="invalid-feedback">
+                                                {% for error in form.password.errors %}
+                                                    <span>{{ error }}</span>
+                                                {% endfor %}
+                                            </div>
+                                        {% else %}
+                                            {{ form.password (class="control input") }}
+                                        {% endif %}
+                                </div>
+                                <div class="form-check">
+                                    {{ form.remember(class="form=check-input")}}
+                                    {{ form.remember.label(class="form=check-label")}}
+                            </fieldset>
+                            <br>
+                            <!-- Submit Button For Form -->
+                            <div class="field">
+                                    {{ form.submit(class="control button is-primary") }}
+                            </div>
+                            <small class="hass-text-weight-light">
+                                <a href="#">Forgot Password?</a>
+                        </form>
+                        <small class="has-text-weight-light">
+                            Need An Account? <a class="is-link" href="{{ url_for('register') }}">Sign Up Now</a>
+                        </small>
+                    </div>
+                </div>
+            </div>
+    </div>
+{% endblock content %}

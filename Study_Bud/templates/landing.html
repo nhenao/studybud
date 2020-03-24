@@ -1,0 +1,40 @@
+{% extends "logged-in-layout.html" %}
+{% block content %}
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+            Welcome to your StudyBud Acount!
+            </h1>
+            <h2 class="subtitle">
+            Your very own virtual journal to stay on track during your semester.
+            </h2>
+        </div>
+    </div>
+</section>
+<section class="content tiles">
+    <div class="container">
+        <div class="columns has-text-centered">
+            <div class="column" style= "z-index: 10;margin-top: -100px;">
+                <a class="box social" href="{{ url_for('schedule') }}">
+                    <p class="title is-2">Schdedule</p>
+                    <p class="subtitle is-4 is-marginless">Set up our schedule here</p>
+                </a>
+            </div>
+
+             <div class="column " style= "z-index: 10;margin-top: -100px;">
+                <a class="box social" href="{{ url_for('assignments') }}">
+                    <p class="title is-2">Assignments</p>
+                    <p class="subtitle is-4 is-marginless">Log your assignments to stay on track</p>
+                </a>
+            </div>
+
+             <div class="column" style= "z-index: 10;margin-top: -100px;">
+                <a class="box social" href="{{ url_for('tasks') }}">
+                    <p class="title is-2">Tasks</p>
+                    <p class="subtitle is-4 is-marginless">Your daily to-do list</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

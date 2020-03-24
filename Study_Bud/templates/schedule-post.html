@@ -1,0 +1,119 @@
+{% extends "logged-in-layout.html" %}
+{% block content %}
+    <div class="hero-body">
+        <div class="columns">
+            <div class="column is-12">
+                <div class="container content">
+                    <i class="is-large fa fa-calendar"></i>
+                    <h1 class="title">Keep on Track</h1>
+                    <h3 class="subtitle">
+                    Update your weekly schedule here!
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+<br>
+<section class="container">
+    <div class="columns is-multiline is-centered" id="sectioncontainer">
+        <div class="column is-two-fifths">
+            <article class="message is-primary">
+                <div class="message-header">
+                    <p>Monday</p>
+                </div>
+                <div class="message-body">
+                    <div class="board-item">
+                        <div class="board-item-content">
+                            <label>{{ day }}</label>
+                            <p>{{ event }}</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="column  is-two-fifths">
+            <article class="message is-primary">
+                <div class="message-header">
+                    <p>Tuesday</p>
+                </div>
+                <div class="message-body">
+                    <div class="board-item">
+
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="column is-two-fifths">
+            <article class="message is-primary">
+                <div class="message-header">
+                    <p>Wednesday</p>
+                </div>
+                <div class="message-body">
+                    <div class="board-item">
+
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+<section class="container">
+    <div class="columns is-multiline is-centered cards-container" id="sectioncontainer">
+        <div class="column is-two-fifths">
+            <article class="message is-primary">
+                <div class="message-header">
+                    <p>Thursday</p>
+                </div>
+                <div class="message-body">
+                    <div class="board-item">
+
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="column is-two-fifths">
+            <article class="message is-primary">
+                <div class="message-header">
+                    <p>Friday</p>
+                </div>
+                <div class="message-body">
+                    <div class="board-item">
+
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+<section class="container">
+    <div class="columns is-multiline is-centered cards-container" id="sectioncontainer">
+        <div class="column is-two-fifths">
+            <article class="message is-success">
+                <div class="message-header">
+                    <p>Saturday</p>
+                </div>
+                <div class="message-body">
+                    <div class="board-item">
+
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="column is-two-fifths">
+            <article class="message is-success">
+                <div class="message-header">
+                    <p>Sunday</p>
+                </div>
+                <div class="message-body">
+                    <div class="board-item">
+
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
